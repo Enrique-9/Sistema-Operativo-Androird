@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Almacenaje: Memoria y Archivos</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">ANDROID</div>
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="#memorias">Memorias físicas</a>
+        <a href="#admin-memoria">Administración de memoria</a>
+        <a href="#importancia-memoria">Importancia de la memoria</a>
+        <a href="#almacenamiento">Sistema de archivo</a>
+        <a href="#paginacion">Paginación</a>
+        <a href="#segmentacion">Segmentación</a>
+        <a href="#asignacion-memoria">Asigancion</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="tema-pagina">
+    <div class="tema-contenido">
+      <h1>3.- Almacenaje: Memoria y Archivos</h1>
+      <p>
+        En Android, la memoria y el almacenamiento son fundamentales para el rendimiento del sistema,
+        la multitarea, la seguridad y la administración de recursos. Esta sección explica los tipos
+        de memoria física, la administración de memoria, el sistema de archivos y la asignación de
+        memoria entre procesos.
+      </p>
+    </div>
+  </section>
+
+  <section id="memorias">
+    <div class="carac-wrapper">
+      <h2 class="section-title">3.1 Tipos de memorias físicas en Android</h2>
+      <p class="section-text">
+        Los principales dispositivos que usan este sistema operativo son los dispositivos móviles y tabletas, aunque también existen versiones de este mismo sistema operativo para otros dispositivos como Android TV o Android carplay, los cuales son especialmente desarrollados para las TV y los automóviles; una vez se conocen los dispositivos en los que podemos encontrar este sistema operativo podemos pasar a ver que tipos de memorias físicas se usan en estas unidades. 
+
+      </p>
+
+      
+        <div class="card">
+          <h3>Memoria RAM  (Random Acces Memory)</h3>
+          <p>
+            Este tipo de memoria es muy importante en los dispositivos Android, ya que es la que se encarga principalmente de hacer 
+            que la multitarea funcione correctamente, específicamente centrándonos en la versión 14 de Android encontramos un tipo 
+            de memoria RAM que emplea la tecnología LPDDR (Low-Power Double Data Rate), con esta tecnología los dispositivos logran 
+            tener una gran velocidad y un consumo energético reducido, lo cual es de suma importancia en este tipo de dispositivos 
+            con capacidades de expansión muy limitadas. <br><br>
+            En esta versión de Android se contaba principalmente con cuatro versiones de esta tecnología, enfocadas en diferentes gamas de dispositivos móviles: 
+<br>    <br>
+LPDDR4: Esta versión de la tecnología LPDDR es la más básica que se podía encontrar en dispositivos gama baja o baratos. 
+<br> <br>
+LPDDR4X: Esta es la versión mejorada del LPDDR4 y a diferencia de su antecesor esta versión cuenta con un mejor balance entre velocidad y consumo energético. 
+<br> <br>
+LPDDR5: Esta versión es más moderna y permite una relación de velocidad y consumo energético muy superior a las anteriores. 
+<br> <br>
+LPDDR5x: Esta es una versión que optimiza el rendimiento y consumo energético en dispositivos de alto rendimiento. 
+<br> <br>
+También es importante hacer mención de que algunos dispositivos con este sistema operativo cuentan con una opción activable de memoria virtual, la cual permite tener una mayor capacidad de almacenamiento, aunque hay que tener en cuenta que este ajuste toma parte de la memoria ROM que es bastante más lenta que la memoria RAM. 
+
+</p>
+        </div>
+<br> <br>
+        <div class="card">
+            <h3>Memoria ROM (Read-Only Memory)</h3>
+            <p>Estas siglas hacen referencia al almacenamiento interno de los dispositivos, este tipo de almacenamiento es el que se encarga de guardar el sistema operativo, lo datos del usuario y las aplicaciones, al igual que como se había mencionado en el caso de la RAM, la ROM también es muy importante y debe contar con ciertas características para que el dispositivo y sistema operativo funcionen de forma correcta. 
+Los dispositivos con el sistema operativo Android 14 suelen utilizar memoria ROM del tipo flash la cual a diferencia de las ROMs comunes puede ser reprogramada electrónicamente. Dentro de este tipo de memoria contamos con varias tecnologías, una de las más importantes es UFS (Universal Flash Storage), las principales diferencias entre cada una de las versiones de esta tecnología con respecto a sus velocidades de lectura y escritura. Algo importante que se puede destacar es que hasta esta versión de Android la mayoría de los dispositivos contaban con las opciones de aumentar el almacenamiento mediante una SD externa, tecnología que ha ido desapareciendo con el paso del tiempo. 
+</p>
+        </div>
+      
+    </div>
+  </section>
+
+  <section id="admin-memoria">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">3.2 Administración de memoria en Android</h2>
+
+    <p class="section-text">
+      Android administra la memoria (RAM) a través de una combinación de mecanismos heredados del Kernel de Linux y utilidades propias, centrándose en el aislamiento de procesos y la conservación de recursos mediante la eliminación selectiva de aplicaciones inactivas. 
+
+    </p>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Mecanismos Fundamentales (Kernel de Linux)</h3>
+
+    <p class="section-text">
+      Android utiliza el kernel de Linux para manejar las funciones de memoria de bajo nivel:
+    </p>
+
+    <div class="bloque">
+      <h4>Paginación (Paging)</h4>
+      <p>
+        Es el mecanismo principal de memoria virtual que permite la multitarea segura.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Aislamiento</h4>
+      <p>
+        Divide la memoria de cada proceso en páginas. La Unidad de Gestión de Memoria o MMU utiliza tablas de páginas para mapear
+        direcciones virtuales a físicas, evitando que una app acceda a la memoria de otra.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Ejecución eficiente</h4>
+      <p>
+        Permite ejecutar aplicaciones aunque solo parte del código esté en RAM, cargando lo necesario dinámicamente.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Uso limitado de Swap</h4>
+      <p>
+        Android evita el uso intensivo de swap para no afectar el rendimiento ni desgastar la memoria.
+        En su lugar, libera RAM cerrando procesos inactivos.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>zRAM</h4>
+      <p>
+        Utiliza compresión de datos en RAM para mejorar la eficiencia sin consumir batería adicional.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Utilidades Específicas de Android</h3>
+    <p class="section-text">El sistema operativo añade capas de gestión por encima del kernel para optimizar la RAM en el entorno móvil. 
+</p>
+
+    <div class="bloque">
+      <h4>Android Runtime (ART)</h4>
+      <p>
+        Es la máquina virtual encargada de ejecutar las aplicaciones en Android.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Garbage Collector (GC)</h4>
+      <p>
+        Libera automáticamente memoria de objetos no utilizados, evitando fugas de memoria y optimizando el rendimiento.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Zygote</h4>
+      <p>
+        Proceso que precarga clases del sistema. Las apps se crean como copias (fork), lo que acelera su inicio.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Low Memory Killer (LMK)</h4>
+      <p>
+        Administra la memoria cerrando aplicaciones de baja prioridad cuando la RAM es insuficiente.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+  <section id="importancia-memoria">
+    <div class="carac-wrapper">
+      <h2 class="section-title">3.3 Importancia de la administración de memoria en Android</h2>
+
+      
+        <div class="card">
+          <h3>Optimización de recursos</h3>
+          <p>
+            El administrar bien la memoria en Android es muy importante, ya que generalmente los dispositivos que cuentan con este sistema operativo son móviles y la mayoría de las veces se prioriza esta comodidad de movilidad sobre los recursos, por lo que la administración de la escasa memoria es necesaria para poder operar de forma eficiente en este sistema operativo. 
+          </p>
+        </div>
+<br> <br>
+        <div class="card">
+          <h3>Optimización del consumo de energía</h3>
+          <p>
+           Al igual que en el punto anterior la batería de los dispositivos móviles con el sistema operativo Android es un recurso limitado muy valioso, la correcta administración de memoria ayuda a que este recurso limitado sea utilizado de la forma más eficiente posible, esto se logra mediante varios procesos, por ejemplo, al gestionar y dormir activamente los procesos inactivos que consumen energía sin razón, la administración de memoria reduce el consumo de batería, lo que es vital en un dispositivo móvil. 
+          </p>
+        </div>
+<br> 
+<br>
+        <div class="card">
+          <h3>Multitarea</h3>
+          <p>
+            La multitarea en dispositivos con Android es posible gracias a que la administración de memoria se lleva a cabo de forma estructuradamente correcta, lo que permite la ejecución de varios procesos a la vez, aunque no se cuente con los recursos necesarios. 
+
+          </p>
+        </div>
+      
+    </div>
+  </section>
+
+  <section id="almacenamiento">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">3.4 Sistema de archivos y almacenamiento</h2>
+
+    <p class="section-text">
+      El sistema de archivos de Android está basado en el Kernel de Linux y se caracteriza
+      por una separación lógica estricta entre las áreas de almacenamiento, lo que garantiza
+      la seguridad y privacidad de los datos.
+    </p>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Almacenamiento Interno (Privado)</h3>
+
+    <p class="section-text">
+      Es el área de memoria integrada del dispositivo reservada para los datos esenciales del sistema operativo y los datos privados de cada aplicación. 
+
+    </p>
+
+    <div class="bloque">
+      <h4>Acceso</h4>
+      <p>
+        Solo la aplicación que creó un archivo puede acceder a él. Es un espacio aislado (sandbox) que garantiza que una aplicación maliciosa no pueda leer los datos sensibles de otra (apps de mensajería, bancarias, etc.). 
+
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Eliminación</h4>
+      <p>
+        Cuando desinstalas una aplicación, todos sus datos almacenados internamente se eliminan automáticamente. 
+
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Uso típico</h4>
+      <p>
+         Almacenar bases de datos SQLite, archivos de configuración (preferences) o caché temporal.
+
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Sistemas de Archivos (Físicos)</h3>
+
+    <p class="section-text">
+      Android, basado en Linux, soporta varios sistemas de archivos, pero dos son los más relevantes para las particiones del sistema y el almacenamiento principal, ya que están optimizados para la memoria NAND Flash de los dispositivos móviles.
+    </p>
+
+    <div class="tabla-archivos">
+  <table>
+    <thead>
+      <tr>
+        <th>Sistema de Archivos</th>
+        <th>Tipo de Uso</th>
+        <th>Característica Clave</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>EXT4</strong><br>
+          <em>(Extended File System 4)</em>
+        </td>
+        <td>
+          Particiones del sistema operativo y almacenamiento interno.
+        </td>
+        <td>
+          Es el sistema de archivos histórico y por defecto de Linux. Es estable, robusto y se utiliza ampliamente en la mayoría de las particiones del sistema Android.
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <strong>F2FS</strong><br>
+          <em>(Flash-Friendly File System)</em>
+        </td>
+        <td>
+          Particiones de datos y almacenamiento interno.
+        </td>
+        <td>
+          Es un sistema desarrollado por Samsung específicamente para memorias Flash. Ofrece mejor rendimiento y eficiencia energética que EXT4 en lectura y escritura aleatoria.
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <strong>FAT32 / exFAT</strong>
+        </td>
+        <td>
+          Tarjetas MicroSD (almacenamiento portátil).
+        </td>
+        <td>
+          Se utilizan para garantizar compatibilidad con hardware y sistemas operativos externos como Windows y macOS al usar tarjetas de memoria.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    
+
+  </div>
+</section>
+
+  <section id="paginacion">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">3.5 Paginación en Android</h2>
+
+    <p class="section-text">
+      La paginación y la segmentación en Android son mecanismos de gestión de memoria heredados del Kernel de Linux.
+      Estos mecanismos son fundamentales para permitir la multitarea segura y optimizar el rendimiento de la memoria
+      limitada en los dispositivos móviles.
+    </p>
+
+    <p class="section-text">
+      La paginación es una técnica de gestión de memoria virtual que Android utiliza para asignar memoria física
+      de manera eficiente y segura a cada aplicación.
+    </p>
+
+    <h3 class="subtitulo">Función principal</h3>
+    <div class="bloque">
+      <p>
+        Permite que un proceso, es decir, una aplicación, se ejecute aunque su memoria no esté contigua en la RAM
+        o aunque solo una parte de ella esté cargada. Esto se logra mediante el uso de memoria virtual.
+      </p>
+    </div>
+
+    <h3 class="subtitulo">Mecanismo</h3>
+    <div class="bloque">
+      <p>
+        La memoria de un proceso, también llamada espacio de direcciones virtual, se divide en bloques de tamaño fijo
+        llamados <strong>páginas</strong>, normalmente de 4 KB.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        La memoria física o RAM también se divide en bloques del mismo tamaño, llamados
+        <strong>marcos de página</strong> o <em>page frames</em>.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        El sistema operativo, a través del Kernel de Linux, mantiene una <strong>tabla de páginas</strong> para cada proceso.
+        Esta tabla relaciona las páginas virtuales con los marcos físicos en la RAM.
+      </p>
+    </div>
+
+    <h3 class="subtitulo">Beneficios en Android</h3>
+
+    <div class="bloque">
+      <h4>Aislamiento de procesos (Seguridad)</h4>
+      <p>
+        Garantiza que una aplicación no pueda acceder a la memoria física de otra aplicación ni a la del sistema,
+        reforzando así el modelo de seguridad o sandbox de Android.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Multitarea eficiente</h4>
+      <p>
+        Permite que el sistema use espacio en disco, aunque Android lo utiliza de forma limitada, para mover temporalmente
+        páginas no utilizadas. Esto libera RAM para las aplicaciones activas y mejora la multitarea.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="segmentacion">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">3.6 Segmentación en Android</h2>
+
+    <p class="section-text">
+      La segmentación es un método de gestión de memoria donde el espacio de direcciones de un proceso
+      se divide en segmentos lógicos de tamaño variable, como el código, los datos y la pila.
+    </p>
+
+    <h3 class="subtitulo">Uso en Android</h3>
+
+    <div class="bloque">
+      <p>
+        En sistemas modernos como Linux, que es la base de Android, la segmentación no se utiliza
+        como el mecanismo principal de gestión de memoria.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Android se basa casi completamente en la <strong>paginación</strong> para garantizar
+        la protección y el aislamiento de la memoria.
+      </p>
+    </div>
+
+    <h3 class="subtitulo">Funcionamiento en Linux</h3>
+
+    <div class="bloque">
+      <p>
+        Aunque la arquitectura x86 soporta segmentación mediante registros especiales,
+        Linux configura un <strong>espacio de direcciones plano</strong>, donde todos los procesos
+        comienzan desde la misma dirección base.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Esto simplifica la gestión de memoria y delega toda la complejidad a la paginación,
+        que es más eficiente y segura.
+      </p>
+    </div>
+
+    <h3 class="subtitulo">Segmentación lógica en Android</h3>
+
+    <p class="section-text">
+      Aunque no se usa directamente a nivel del sistema, las aplicaciones sí manejan
+      una organización lógica de la memoria en diferentes áreas:
+    </p>
+
+    <div class="bloque">
+      <h4>Código</h4>
+      <p>
+        Contiene las instrucciones de la aplicación.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Datos</h4>
+      <p>
+        Almacena variables y estructuras necesarias para el funcionamiento de la app.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Heap</h4>
+      <p>
+        Área de memoria dinámica donde se crean objetos durante la ejecución.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Stack</h4>
+      <p>
+        Se utiliza para manejar llamadas a funciones y ejecución del programa.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+ <section id="asignacion-memoria">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">3.7 Asignación de memoria entre procesos</h2>
+
+    <p class="section-text">
+      En Android, cada aplicación se ejecuta dentro de un proceso independiente,
+      normalmente con una instancia del Android Runtime (ART). Esto permite que cada
+      proceso tenga su propio espacio de memoria aislado.
+    </p>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Aislamiento de procesos</h3>
+
+    <div class="bloque">
+      <p>
+        Cada proceso tiene su propio espacio de direcciones virtuales y no puede acceder
+        directamente a la memoria de otras aplicaciones.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Android utiliza un modelo de <strong>sandbox</strong> para aislar procesos,
+        mejorando la seguridad y estabilidad del sistema.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Asignación de memoria</h3>
+
+    <div class="bloque">
+      <p>
+        El Kernel de Linux asigna a cada proceso un rango de direcciones de memoria virtual.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        La <strong>MMU (Memory Management Unit)</strong> se encarga de traducir direcciones
+        virtuales a direcciones físicas en la RAM.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        La memoria se gestiona mediante <strong>paginación</strong>, utilizando tablas de páginas
+        para controlar qué partes de la RAM están asignadas.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Estructura de memoria de un proceso</h3>
+
+    <div class="bloque">
+      <h4>Heap</h4>
+      <p>Área de memoria dinámica donde se crean objetos (Java/Kotlin).</p>
+    </div>
+
+    <div class="bloque">
+      <h4>Stack</h4>
+      <p>Se utiliza para variables locales y ejecución de funciones.</p>
+    </div>
+
+    <div class="bloque">
+      <h4>Código</h4>
+      <p>Contiene las instrucciones ejecutables de la aplicación.</p>
+    </div>
+
+    <div class="bloque">
+      <h4>Datos estáticos</h4>
+      <p>Variables globales o estáticas de la aplicación.</p>
+    </div>
+
+    <div class="bloque">
+      <h4>Bibliotecas compartidas</h4>
+      <p>Se cargan dinámicamente y pueden compartirse entre procesos.</p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Gestión con ART y Garbage Collector</h3>
+
+    <div class="bloque">
+      <p>
+        Android utiliza ART para ejecutar aplicaciones y gestionar la memoria del heap.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        El <strong>Garbage Collector (GC)</strong> libera automáticamente memoria de objetos
+        que ya no se utilizan.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Android 14 utiliza un GC concurrente y generacional, lo que permite recolectar memoria
+        sin detener completamente la aplicación y optimizar el rendimiento.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Proceso Zygote</h3>
+
+    <div class="bloque">
+      <p>
+        Android no crea procesos desde cero. Utiliza un proceso base llamado <strong>Zygote</strong>,
+        que ya contiene librerías y clases del sistema precargadas.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Cuando se inicia una app, el sistema clona Zygote (fork), lo que permite iniciar
+        aplicaciones más rápido.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Se utiliza <strong>Copy-On-Write (COW)</strong>, lo que permite compartir memoria
+        entre procesos y solo duplicarla cuando es necesario.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Gestión de memoria y prioridad</h3>
+
+    <div class="bloque">
+      <p>
+        Android controla el uso de memoria mediante el <strong>Low Memory Killer Daemon (LMKD)</strong>.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Cuando la memoria es insuficiente, el sistema elimina procesos de menor prioridad
+        para liberar recursos.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Esto evita bloqueos y mantiene la fluidez del sistema.
+      </p>
+    </div>
+
+  </div>
+  <div class="btn-container">
+  <a href="index.html" class="btn">Volver al inicio</a>
+</div>
+</section>
+
+</body>
+</html>

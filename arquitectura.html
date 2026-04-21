@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquitectura del sistema operativo</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">ANDROID</div>
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="#carac">Caracteristicas</a>
+        <a href="#funciones-android">Funciones principales</a>
+        <a href="#clasificacion-android">Clasificacion</a>
+        <a href="#interfaces-android">Interfaces</a>
+        <a href="#utilerias-android">Principales utilerias</a>
+        
+      </div>
+    </nav>
+  </header>
+
+  <section class="tema-pagina">
+    <div class="tema-contenido">
+      <h1>1.- Arquitectura, desempeño y tipo de un sistema operativo</h1>
+      <p>
+       Android es un sistema operativo móvil creado por Google y basado en el núcleo de Linux. Está diseñado para dispositivos de 
+       pantalla táctil como teléfonos y tabletas. Su principal objetivo es ofrecer una plataforma abierta que permite personalizar, 
+       innovar y ser compatible entre distintos dispositivos.
+      </p>
+    </div>
+  </section>
+
+ <section  id="carac">
+    <div class="carac-wrapper">
+    <!--<h2 class="section-title fade-up">Caracteristicas</h2>-->
+    <h2 class="section-title">1.1 Codigo abierto:</h2>
+    <p class="section-text">
+    Su código fuente principal (Android Open Source Project o AOSP) está disponible públicamente. Esto permite a fabricantes y 
+    desarrolladores modificar y adaptar el sistema operativo, lo que fomenta la innovación y la creación de una amplia oferta de 
+    aplicaciones (muchas gratuitas) y una rápida corrección de errores.
+    </p>
+     <img src="IMG/opensource.jpg" alt="">
+
+     <h2 class="section-title">Personalizacion:</h2>
+     <p class="section-text">
+        Ofrece una gran libertad al usuario y al desarrollador para modificar la interfaz de usuario, usar launchers (lanzadores),
+         widgets y personalizar el comportamiento del sistema.
+     </p>
+     <img src="IMG/personalizacion.jpeg" alt="">
+
+    <h2 class="section-title ">Diversidad y versatilidad:</h2>
+     <p class="section-text">
+        Se encuentra en una vasta gama de dispositivos, no solo teléfonos móviles, sino también tabletas, relojes inteligentes,
+         televisores (Android TV), y otros electrodomésticos, en una gran variedad de marcas y precios.
+     </p>
+     <img src="IMG/versatilidad.jpg" alt="">
+
+
+     <h2 class="section-title">Multitarea real:</h2>
+     <p class="section-text ">
+       Permite que las aplicaciones se ejecuten en segundo plano de manera simultanea, facilitando el cambio rapido entre ellas.
+     </p>
+     <img src="IMG/multitarea.jpg" alt="">
+
+     <h2 class="section-title">Integracion con Google:</h2>
+     <p class="section-text">
+       Esta perfectamente integrado con servicios como Google Play Store (su catalogo de aplicaciones), Gmail, Google Maps y Google Drive,
+       proporcionando una experiencia cohesiva.
+     </p>
+     <img src="IMG/google.jpg" alt="">
+
+     <h2 class="section-title">Adaptabilidad:</h2>
+     <p class="section-text">
+       Es adaptable a multiples resoluciones de pantalla y soporta una amplia variedad formatos multimedia (audio, video, imagenes) y 
+       estandares de conectividad (Wi-Fi, Bluetooth, 4G, 5G, etc.).
+     </p>
+     <img src="IMG/5g.jpg" alt="">
+</div>
+  </section>
+  
+        
+
+  <section id="funciones-android">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">1.2 Funciones de los componentes de Android</h2>
+
+    <p class="section-text">
+      Las funciones del sistema operativo Android se dividen en dos grandes áreas:
+      funciones de bajo nivel, encargadas de la gestión interna del sistema,
+      y funciones orientadas al usuario y al desarrollo, enfocadas en la interacción
+      y ejecución de aplicaciones. <br>
+      <center><img src="IMG/androide.png" alt="">
+</center>
+    </p>
+    
+    <!-- ===================== -->
+    <h3 class="subtitulo">Funciones de Bajo Nivel (Núcleo Linux)</h3>
+
+    <p class="section-text">
+      Android está basado en el núcleo de Linux, el cual es responsable del funcionamiento
+      básico del dispositivo y la gestión de sus recursos.
+    </p>
+
+    <div class="bloque">
+      <h4>Gestión de recursos de hardware</h4>
+      <p>
+        Actúa como intermediario entre el software y el hardware del dispositivo,
+        permitiendo el uso de componentes como pantalla, cámara y memoria.
+      </p>
+      <center><img src="IMG/computadora-de-escritorio.png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <h4>Gestión de memoria y procesos</h4>
+      <p>
+        Administra la memoria RAM y permite la multitarea, facilitando que varias
+        aplicaciones se ejecuten al mismo tiempo.
+      </p>
+      <center><img src="IMG/memoria-ram.png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <h4>Seguridad del sistema</h4>
+      <p>
+        Proporciona servicios base de seguridad y modelos de permisos como SELinux,
+        protegiendo el sistema contra accesos no autorizados.
+      </p>
+      <center><img src="IMG/huella-digital-del-pulgar.png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <h4>Pila de red y conectividad</h4>
+      <p>
+        Gestiona la comunicación de red, incluyendo Wi-Fi, datos móviles y Bluetooth.
+      </p>
+      <center><img src="IMG/lan(1).png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <h4>Administración de energía</h4>
+      <p>
+        Optimiza el consumo de batería mediante la gestión eficiente de procesos
+        y recursos del sistema.
+      </p>
+      <center><img src="IMG/bateria-cargando.png" alt=""></center>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Funciones orientadas al usuario y desarrollo</h3>
+
+    <h4 class="mini-titulo">Interfaz y experiencia de usuario</h4>
+
+    <div class="bloque">
+      <p><strong>Interfaz gráfica (UI):</strong> Proporciona elementos visuales como botones,
+      iconos y menús. Es altamente personalizable.</p>
+      <center><img src="IMG/interfaz-de-usuario(1).png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <p><strong>Sistema de notificaciones:</strong> Organiza alertas en un panel central.</p>
+      <center><img src="IMG/activo(1).png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <p><strong>Multitarea:</strong> Permite cambiar entre aplicaciones abiertas y ver tareas recientes.</p>
+      <center><img src="IMG/multitarea.png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <p><strong>Accesibilidad:</strong> Incluye lectores de pantalla, subtítulos y opciones visuales.</p>
+      <center><img src="IMG/accesibilidad(1).png" alt=""></center>
+    </div>
+
+    <!-- ===================== -->
+    <h4 class="mini-titulo">Soporte de aplicaciones y servicios</h4>
+
+    <div class="bloque">
+      <p><strong>ART:</strong> Ejecuta aplicaciones dentro de procesos independientes.</p>
+      <center><img src="IMG/proceso-de-trabajo.png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <p><strong>Google Play Store:</strong> Permite descargar e instalar aplicaciones.</p>
+      <center><img src="IMG/google-drive(1).png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <p><strong>Application Framework:</strong> Ofrece APIs para desarrollar aplicaciones.</p>
+      <center><img src="IMG/api(1).png" alt=""></center>
+    </div>
+
+    <!-- ===================== -->
+    <h4 class="mini-titulo">Integración y multimedia</h4>
+
+    <div class="bloque">
+      <p><strong>Almacenamiento:</strong> Maneja almacenamiento interno y externo.</p>
+      <center><img src="IMG/servicio-de-almacenamiento-en-la-nube.png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <p><strong>Soporte multimedia:</strong> Reproduce audio, video e imágenes.</p>
+      <center><img src="IMG/multimedia(2).png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <p><strong>Servicios de Google:</strong> Integra funciones como Google Lens o Translate.</p>
+      <center><img src="IMG/cromo(1).png" alt=""></center>
+    </div>
+
+    <div class="bloque">
+      <p><strong>Conectividad avanzada:</strong> Soporte para NFC y otras tecnologías.</p>
+      <center><img src="IMG/wifi.png" alt=""></center>
+    </div>
+
+  </div>
+</section>
+
+<section id="clasificacion-android">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">1.3 Clasificación de Android</h2>
+
+    <p class="section-text">
+      Basándose en sus características y funciones, el sistema operativo Android
+      puede clasificarse en diferentes categorías que describen su naturaleza
+      y su forma de desarrollo.
+    </p>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Tipo de sistema operativo</h3>
+
+    <div class="bloque">
+      <h4>Sistema Operativo Móvil</h4>
+      <p>
+        Android está diseñado y optimizado para dispositivos con recursos limitados,
+        como batería, memoria y procesador.
+      </p>
+      <p>
+        Además, está centrado en la interacción táctil y la conectividad inalámbrica,
+        características propias de smartphones y tablets.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Modelo de código</h3>
+
+    <div class="bloque">
+      <h4>Sistema de Código Abierto (Open Source)</h4>
+      <p>
+        El núcleo del sistema (AOSP) y muchas de sus capas superiores son de libre acceso,
+        uso y modificación.
+      </p>
+      <p>
+        Esto permite la colaboración entre desarrolladores y la adaptación del sistema
+        por parte de fabricantes (OEMs), fomentando la innovación.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="interfaces-android">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">1.4 Interfaces de Android</h2>
+
+    <p class="section-text">
+      Android utiliza principalmente una interfaz gráfica para el usuario común,
+      pero también incluye una interfaz de línea de comandos para tareas técnicas
+      y de desarrollo.
+    </p>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">GUI (Graphical User Interface)</h3>
+
+    <div class="bloque">
+      <h4>Definición</h4>
+      <p>
+        Es una interfaz basada en elementos visuales como iconos, botones, menús
+        y ventanas que permiten una interacción intuitiva con el sistema.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Función en Android</h4>
+      <p>
+        Proporciona la experiencia de uso diaria del dispositivo, incluyendo
+        la pantalla de inicio, aplicaciones y sistema de notificaciones.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Interacción</h4>
+      <p>
+        Se basa en la interfaz táctil (TUI), permitiendo al usuario interactuar
+        mediante gestos y toques en la pantalla.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">CLI (Command Line Interface)</h3>
+
+    <div class="bloque">
+      <h4>Definición</h4>
+      <p>
+        Es una interfaz basada en texto donde el usuario interactúa con el sistema
+        mediante comandos específicos.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Función en Android</h4>
+      <p>
+        Está presente a nivel del núcleo Linux y permite la gestión del sistema,
+        procesos y hardware mediante comandos.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Herramientas de desarrollo</h4>
+      <p>
+        Los desarrolladores utilizan herramientas como <strong>ADB (Android Debug Bridge)</strong>
+        para instalar aplicaciones, depurar código y acceder al sistema.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Usuarios avanzados</h4>
+      <p>
+        Mediante aplicaciones como Termux o dispositivos rooteados, es posible acceder
+        a la shell de Linux y ejecutar comandos de bajo nivel.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="utilerias-android">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">1.5 Principales utilerías del sistema</h2>
+
+    <p class="section-text">
+      Android está formado por distintos componentes fundamentales que trabajan en conjunto
+      para garantizar el correcto funcionamiento del sistema. Cada uno cumple funciones
+      específicas dentro de la arquitectura del sistema operativo.
+    </p>
+
+    <!-- ===================== -->
+    <div class="bloque">
+      <h4>Núcleo de Linux</h4>
+      <p>
+        Es la base del sistema y se encarga de funciones esenciales como la seguridad,
+        la gestión de memoria, la administración de procesos, la comunicación en red
+        y el manejo de controladores.
+      </p>
+      <p>
+        Además, actúa como intermediario entre el hardware y el software.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Capa de Abstracción de Hardware (HAL)</h4>
+      <p>
+        Permite la comunicación entre Android y los componentes físicos del dispositivo
+        sin modificar las capas superiores, facilitando la compatibilidad con diferentes equipos.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Android Runtime (ART)</h4>
+      <p>
+        Es el entorno encargado de ejecutar las aplicaciones, optimizando el rendimiento
+        mediante técnicas como compilación AOT, JIT y recolección de memoria.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Bibliotecas nativas (C/C++)</h4>
+      <p>
+        Proporcionan funciones básicas utilizadas por el sistema y las aplicaciones,
+        sirviendo como soporte para operaciones internas.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Marco de API de Java</h4>
+      <p>
+        Ofrece a los desarrolladores herramientas y APIs que permiten acceder a las funciones
+        del sistema y crear aplicaciones de manera sencilla.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Servicios del sistema</h4>
+      <p>
+        Incluyen funciones como telefonía, localización, gestión de ventanas,
+        administración de paquetes y proveedores de contenido.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Marco de aplicación</h4>
+      <p>
+        Proporciona la estructura necesaria para desarrollar aplicaciones,
+        incluyendo componentes como actividades, servicios, receptores y proveedores.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Aplicaciones</h4>
+      <p>
+        Son la capa superior del sistema. Incluyen tanto aplicaciones preinstaladas
+        como aquellas descargadas por el usuario.
+      </p>
+      <p>
+        Estas se ejecutan en un entorno seguro que protege el sistema y los datos del usuario.
+      </p>
+    </div>
+
+    
+  </div>
+
+  <div class="btn-container">
+  <a href="index.html" class="btn">Volver al inicio</a>
+</div>
+</section>
+
+  
+
+  
+
+<script>
+  const elements = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

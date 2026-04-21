@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redes y Seguridad: Sistemas distribuidos</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">ANDROID</div>
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="#amenazas-android">Amenazas</a>
+        <a href="#vulnerabilidades">Vulnerabilidades</a>
+        <a href="#redes-navegacion">Redes</a>
+        <a href="#propagacion-malware">Propagacion malware</a>
+        <a href="#consecuencias">Consecuencias</a>
+        <a href="#proteccion-prevencion">Proteccion</a>
+        <a href="#autenticacion-android">Autenticacion</a>
+        <a href="#seguridad-android14">Seguridad</a>
+        <a href="#software-proteccion">Proteccion</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="tema-pagina">
+    <div class="tema-contenido">
+      <h1>4.- Redes y Seguridad: Sistemas distribuidos</h1>
+      <p>
+        Android es el sistema operativo móvil más utilizado en el mundo, pero su popularidad
+        también lo convierte en un objetivo frecuente de ataques. En esta página se presentan
+        las principales amenazas, vulnerabilidades, riesgos en redes, métodos de protección
+        y herramientas de seguridad disponibles en Android.
+      </p>
+    </div>
+  </section>
+
+  <section id="amenazas-android">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">4.1 Principales amenazas en Android</h2>
+
+    <p class="section-text">
+      Actualmente, Android es el sistema operativo móvil más utilizado a nivel mundial,
+      impulsando la comunicación, el trabajo y el entretenimiento en millones de dispositivos.
+      Sin embargo, su popularidad también lo convierte en un objetivo atractivo para los ciberdelincuentes.
+    </p>
+
+    <p class="section-text">
+      La seguridad en Android enfrenta diversos desafíos debido a su naturaleza abierta,
+      la diversidad de fabricantes y la gran cantidad de aplicaciones disponibles en distintas fuentes.
+      Esto permite la existencia de múltiples amenazas, principalmente relacionadas con malware
+      y vulnerabilidades técnicas.
+    </p>
+
+    <p class="section-text">
+      Entre las amenazas más comunes se encuentran los troyanos bancarios y espía,
+      así como ransomware y adware, que afectan directamente la seguridad del usuario
+      y la integridad de sus datos.
+    </p>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Tipos de amenazas</h3>
+
+    <div class="bloque">
+      <h4>Troyanos bancarios y troyanos espía</h4>
+      <p>
+        Son programas maliciosos que se ocultan dentro de aplicaciones aparentemente inofensivas,
+        como juegos o utilidades, para engañar al usuario.
+      </p>
+      <p>
+        Una vez instalados, pueden robar información confidencial como contraseñas, datos bancarios
+        o códigos de autenticación multifactor (MFA), permitiendo el acceso no autorizado a cuentas.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Ransomware</h4>
+      <p>
+        Este tipo de malware cifra archivos personales del usuario, como fotos, videos o documentos,
+        y exige un pago para recuperar el acceso.
+      </p>
+      <p>
+        Es una amenaza grave, ya que puede provocar la pérdida total de información si no existe
+        una copia de seguridad.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Adware</h4>
+      <p>
+        Aunque es menos destructivo, el adware muestra publicidad excesiva e invasiva,
+        afectando el rendimiento del dispositivo.
+      </p>
+      <p>
+        Además, puede recopilar datos de navegación del usuario sin su consentimiento,
+        comprometiendo su privacidad.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Casos recientes</h3>
+
+    <div class="bloque">
+      <p>
+        En años recientes, se han detectado programas maliciosos como
+        <strong>Downloader.DN, InfoStealer.XY y Mail Bot</strong>,
+        los cuales lograron distribuirse incluso a través de Google Play.
+      </p>
+      <p>
+        Estos malware fueron capaces de robar información confidencial como contraseñas
+        y datos bancarios, demostrando que los ataques evolucionan constantemente.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="vulnerabilidades">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">4.2 Vulnerabilidades</h2>
+
+    <p class="section-text">
+      Además de las amenazas provocadas por software malicioso, Android enfrenta un problema estructural
+      relacionado con las vulnerabilidades del sistema. Estas vulnerabilidades son fallos o debilidades
+      en el código que pueden ser aprovechados por atacantes para obtener acceso no autorizado,
+      ejecutar código malicioso o comprometer la integridad del dispositivo.
+    </p>
+
+    <h3 class="subtitulo">Problema estructural</h3>
+
+    <div class="bloque">
+      <p>
+        Las vulnerabilidades del sistema representan un riesgo importante porque pueden ser explotadas
+        incluso sin que el usuario instale una aplicación maliciosa de manera directa.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Cuando una debilidad del sistema no ha sido corregida, los atacantes pueden utilizarla para
+        instalar malware, interceptar información o tomar control parcial del dispositivo.
+      </p>
+    </div>
+
+    <h3 class="subtitulo">Fragmentación del ecosistema Android</h3>
+
+    <div class="bloque">
+      <p>
+        Este problema se agrava por la fragmentación del ecosistema Android, ya que existen múltiples
+        versiones del sistema operativo funcionando al mismo tiempo en dispositivos de diferentes fabricantes.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Muchos de estos dispositivos no reciben actualizaciones de seguridad de forma oportuna o constante,
+        lo que prolonga la exposición a amenazas ya conocidas.
+      </p>
+    </div>
+
+    <h3 class="subtitulo">Consecuencias de la fragmentación</h3>
+
+    <div class="bloque">
+      <p>
+        La fragmentación provoca que millones de equipos sigan vulnerables incluso después de que Google
+        publique parches de seguridad.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Como consecuencia, los ciberdelincuentes pueden aprovechar vulnerabilidades no corregidas
+        para instalar software malicioso, interceptar datos sensibles o comprometer el sistema.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="redes-navegacion">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">4.3 Amenazas en redes y navegación</h2>
+
+    <p class="section-text">
+      Una de las principales vías de ataque en Android son las conexiones a redes inseguras
+      y la navegación sin precaución. Estas situaciones pueden exponer información sensible
+      del usuario sin que este lo note.
+    </p>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">📶 Redes Wi-Fi públicas</h3>
+
+    <div class="bloque">
+      <p>
+        Cuando un usuario se conecta a una red Wi-Fi pública (cafeterías, aeropuertos o centros comerciales),
+        su tráfico puede ser interceptado mediante ataques <strong>Man-in-the-Middle (MitM)</strong>.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        En este tipo de ataque, el ciberdelincuente se posiciona entre el dispositivo y el servidor,
+        permitiéndole robar contraseñas, mensajes o datos bancarios.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        El atacante puede crear una red Wi-Fi falsa o interceptar una red pública para que el dispositivo
+        envíe información a través de él.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">⚠️ Riesgos en la conexión</h3>
+
+    <div class="bloque">
+      <p>
+        Si la conexión no está correctamente cifrada o la aplicación no valida los certificados de seguridad,
+        el atacante puede acceder a información personal y credenciales del usuario.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">🌐 Sitios web maliciosos</h3>
+
+    <div class="bloque">
+      <p>
+        Android también puede ser vulnerable a páginas web falsas diseñadas para engañar al usuario,
+        haciendo que descargue aplicaciones infectadas o introduzca sus datos personales.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Además, existen ataques mediante <strong>DNS falsos</strong>, que redirigen al usuario a sitios fraudulentos
+        sin que este lo perciba.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">🔐 Medidas de protección</h3>
+
+    <div class="bloque">
+      <p>Evitar conectarse a redes Wi-Fi públicas abiertas.</p>
+    </div>
+
+    <div class="bloque">
+      <p>Utilizar una VPN confiable para cifrar la conexión.</p>
+    </div>
+
+    <div class="bloque">
+      <p>Mantener Android y el navegador actualizados.</p>
+    </div>
+
+    <div class="bloque">
+      <p>Descargar aplicaciones solo de fuentes seguras.</p>
+    </div>
+
+    <div class="bloque">
+      <p>No ignorar advertencias de seguridad HTTPS.</p>
+    </div>
+
+  </div>
+</section> 
+
+<section id="propagacion-malware">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">4.4 Métodos de propagación del malware</h2>
+
+    <p class="section-text">
+      El malware en Android se propaga principalmente a través de fuentes de instalación no oficiales
+      y prácticas inseguras por parte de los usuarios.
+    </p>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Fuentes no oficiales</h3>
+
+    <div class="bloque">
+      <p>
+        Muchos usuarios descargan aplicaciones desde sitios web externos o instalan archivos APK modificados,
+        como versiones “premium” gratuitas.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Estas aplicaciones suelen estar infectadas con malware, como troyanos o spyware,
+        comprometiendo la seguridad del dispositivo.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Ingeniería social</h3>
+
+    <div class="bloque">
+      <p>
+        Otro método común son los mensajes de texto, correos electrónicos o redes sociales que contienen enlaces falsos.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Estos enlaces suelen prometer premios, actualizaciones o beneficios, pero en realidad instalan
+        software malicioso en el dispositivo.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Aplicaciones clonadas</h3>
+
+    <div class="bloque">
+      <p>
+        Existen aplicaciones falsas que imitan a las originales, como versiones falsas de WhatsApp o Facebook.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Al instalarlas, estas aplicaciones pueden robar datos personales, credenciales o información sensible del usuario.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Casos reales</h3>
+
+    <div class="bloque">
+      <p>
+        Incluso algunas aplicaciones maliciosas han logrado infiltrarse en Google Play, como los troyanos
+        <strong>Downloader.DN</strong> y <strong>InfoStealer.XY</strong>.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Esto demuestra que los atacantes buscan constantemente nuevas formas de distribución,
+        aprovechando la confianza del usuario.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="consecuencias">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">4.5 Consecuencias de las amenazas</h2>
+
+    <p class="section-text">
+      Las amenazas de seguridad en Android pueden tener consecuencias graves tanto para el usuario
+      común como para empresas, afectando directamente la información, el rendimiento del dispositivo
+      y la privacidad.
+    </p>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Principales consecuencias</h3>
+
+    <div class="bloque">
+      <h4>Robo de identidad</h4>
+      <p>
+        Los atacantes pueden obtener datos personales como contactos, correos electrónicos
+        o ubicación, lo que permite suplantar la identidad del usuario.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Pérdida de información</h4>
+      <p>
+        Archivos, fotos o documentos pueden eliminarse o cifrarse mediante ataques como el ransomware,
+        provocando la pérdida total de datos.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Robo financiero</h4>
+      <p>
+        Mediante troyanos bancarios, los ciberdelincuentes pueden acceder a cuentas
+        y realizar transferencias sin autorización.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Daño al rendimiento del dispositivo</h4>
+      <p>
+        El adware y el spyware consumen recursos del sistema, provocando lentitud,
+        fallas y mayor consumo de batería.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Compromiso de la privacidad</h4>
+      <p>
+        Las aplicaciones maliciosas pueden grabar audio, acceder a la cámara o rastrear
+        la ubicación del usuario sin su consentimiento.
+      </p>
+    </div>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Impacto general</h3>
+
+    <div class="bloque">
+      <p>
+        Estas consecuencias demuestran que el impacto de las amenazas no siempre es visible
+        de inmediato, pero puede afectar gravemente la <strong>confidencialidad, integridad
+        y disponibilidad</strong> de la información.
+      </p>
+    </div>
+
+  </div>
+</section> 
+
+
+  <section id="proteccion-prevencion">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">4.6 Medidas de protección y prevención</h2>
+
+    <p class="section-text">
+      Para reducir los riesgos de seguridad en Android, existen diversas medidas de protección.
+      Sin embargo, su efectividad depende en gran medida del uso responsable por parte del usuario.
+    </p>
+
+    <!-- ===================== -->
+    <h3 class="subtitulo">Buenas prácticas de seguridad</h3>
+
+    <div class="bloque">
+      <h4>Descargas seguras</h4>
+      <p>
+        Instalar aplicaciones únicamente desde Google Play o fuentes verificadas,
+        revisando opiniones, calificaciones y permisos solicitados.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Actualizaciones constantes</h4>
+      <p>
+        Mantener el sistema operativo y las aplicaciones actualizadas,
+        ya que las actualizaciones corrigen vulnerabilidades de seguridad.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Autenticación multifactor (MFA)</h4>
+      <p>
+        Activar MFA en cuentas importantes para agregar una capa adicional de seguridad
+        y evitar accesos no autorizados.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Uso de antivirus</h4>
+      <p>
+        Utilizar aplicaciones de seguridad móvil que analicen descargas
+        y detecten comportamientos sospechosos.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Redes seguras</h4>
+      <p>
+        Evitar redes Wi-Fi públicas sin protección o utilizar VPNs confiables
+        para cifrar la conexión.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Protección del dispositivo</h4>
+      <p>
+        Configurar bloqueo de pantalla y cifrado de datos para proteger
+        la información en caso de pérdida o robo.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Educación del usuario</h4>
+      <p>
+        Adoptar prácticas seguras como no abrir enlaces desconocidos,
+        no instalar APKs externas y revisar cuidadosamente los permisos
+        de cada aplicación.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="autenticacion-android">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">4.7 Recursos de autentificación en Android</h2>
+
+    <p class="section-text">
+      Android cuenta con diferentes recursos de autentificación y protección de credenciales
+      que permiten implementar inicios de sesión más seguros, autenticación biométrica,
+      almacenamiento criptográfico y validación de integridad del dispositivo.
+    </p>
+
+    <div class="cards-autenticacion">
+
+      <div class="card">
+        <h3>Credential Manager</h3>
+        <p>
+          Es la API unificada de Android para almacenar y recuperar credenciales de usuario,
+          llaves de acceso y mecanismos de acceso federado.
+        </p>
+
+        <h4>Funcionalidad técnica</h4>
+        <ul>
+          <li>Solicita contraseñas guardadas, credenciales federadas y llaves de acceso.</li>
+          <li>Maneja el diálogo del sistema para selección y consentimiento del usuario.</li>
+          <li>Permite interoperabilidad entre apps y proveedores de identidad.</li>
+        </ul>
+
+        <h4>Casos de uso y recomendaciones</h4>
+        <ul>
+          <li>Usarlo para simplificar el flujo de inicio de sesión.</li>
+          <li>No almacenar secretos sensibles fuera de los mecanismos del sistema.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>BiometricPrompt</h3>
+        <p>
+          Es la API recomendada para autenticación biométrica, como huella digital
+          o reconocimiento facial.
+        </p>
+
+        <h4>Funcionalidad técnica</h4>
+        <ul>
+          <li>Presenta un diálogo seguro gestionado por el sistema.</li>
+          <li>Integra fallback con PIN o contraseña del dispositivo.</li>
+          <li>Puede combinarse con Keystore para operaciones criptográficas seguras.</li>
+        </ul>
+
+        <h4>Casos de uso y recomendaciones</h4>
+        <ul>
+          <li>Delegar la verificación biométrica al sistema.</li>
+          <li>Usarlo junto con Keystore para operaciones sensibles.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Android Keystore</h3>
+        <p>
+          Es el almacén seguro de claves criptográficas del sistema.
+        </p>
+
+        <h4>Funcionalidad técnica</h4>
+        <ul>
+          <li>Genera y almacena claves simétricas y asimétricas.</li>
+          <li>Permite exigir autenticación biométrica o PIN para usar una clave.</li>
+          <li>Las claves privadas no salen del contenedor seguro.</li>
+        </ul>
+
+        <h4>Casos de uso y recomendaciones</h4>
+        <ul>
+          <li>Guardar claves de cifrado de tokens y credenciales.</li>
+          <li>Usar restricciones de autenticación en operaciones de alto riesgo.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>FIDO2 y WebAuthn</h3>
+        <p>
+          Permiten autenticación sin contraseña basada en criptografía de clave pública.
+        </p>
+
+        <h4>Funcionalidad técnica</h4>
+        <ul>
+          <li>Se crea un par de claves pública/privada.</li>
+          <li>El servidor valida desafíos firmados por la clave privada.</li>
+          <li>Reduce el riesgo de phishing al ligar la autenticación al origen.</li>
+        </ul>
+
+        <h4>Casos de uso y recomendaciones</h4>
+        <ul>
+          <li>Usarlo en servicios que requieren alta seguridad.</li>
+          <li>Combinarlo con señales de integridad del dispositivo.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>AccountManager y Smart Lock</h3>
+        <p>
+          Facilitan la administración de cuentas, tokens y credenciales guardadas.
+        </p>
+
+        <h4>Funcionalidad técnica</h4>
+        <ul>
+          <li>AccountManager permite administrar cuentas del sistema.</li>
+          <li>Smart Lock ayuda a guardar y recuperar credenciales.</li>
+          <li>Mejora la experiencia de inicio de sesión del usuario.</li>
+        </ul>
+
+        <h4>Casos de uso y recomendaciones</h4>
+        <ul>
+          <li>Usar AccountManager cuando varias apps comparten identidad.</li>
+          <li>Preferir Smart Lock para reducir fricción de acceso.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>OAuth 2.0, OpenID Connect y MFA</h3>
+        <p>
+          Son estándares de autorización, identidad federada y autenticación multifactor.
+        </p>
+
+        <h4>Funcionalidad técnica</h4>
+        <ul>
+          <li>OpenID Connect entrega ID tokens y OAuth 2.0 maneja autorización.</li>
+          <li>Implementan flujos seguros con PKCE en clientes móviles.</li>
+          <li>MFA agrega factores extra como TOTP, SMS o notificaciones push.</li>
+        </ul>
+
+        <h4>Casos de uso y recomendaciones</h4>
+        <ul>
+          <li>Implementar PKCE para evitar interceptación.</li>
+          <li>Delegar MFA al proveedor de identidad cuando sea posible.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Play Integrity y SafetyNet</h3>
+        <p>
+          Proveen señales sobre el estado del dispositivo y la integridad de la aplicación.
+        </p>
+
+        <h4>Funcionalidad técnica</h4>
+        <ul>
+          <li>Detectan dispositivos rooteados, manipulados o emulados.</li>
+          <li>Devuelven atestados firmados por Google.</li>
+          <li>Ayudan a tomar decisiones de autenticación y autorización.</li>
+        </ul>
+
+        <h4>Casos de uso y recomendaciones</h4>
+        <ul>
+          <li>Validar integridad antes de emitir credenciales sensibles.</li>
+          <li>No usar estas señales como único control de seguridad.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section> 
+
+
+  
+<section id="seguridad-android14">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">4.8 Seguridad de la información en Android 14</h2>
+
+    <p class="section-text">
+      Android 14 incorpora mecanismos de defensa a nivel de hardware y software para prevenir
+      la explotación de vulnerabilidades internas, reforzar la confidencialidad de la información
+      y mejorar el control del usuario sobre sus datos personales.
+    </p>
+
+    <h3 class="subtitulo">Protección interna del sistema</h3>
+
+    <div class="bloque">
+      <h4>HWASan</h4>
+      <p>
+        Android 14 utiliza <strong>HWASan (Hardware-Assisted AddressSanitizer)</strong> para detectar
+        errores de memoria y evitar que los atacantes aprovechen esas fallas para ejecutar código malicioso.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Cifrado AES-HCTR2</h4>
+      <p>
+        También emplea un cifrado avanzado de archivos llamado <strong>AES-HCTR2</strong>, que protege
+        tanto los nombres como los datos almacenados, fortaleciendo la confidencialidad de la información.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Soporte para múltiples IMEI</h4>
+      <p>
+        Android 14 incluye soporte para múltiples IMEI, lo que facilita el control y la trazabilidad
+        de dispositivos en entornos corporativos y ayuda a reducir riesgos de manipulación o clonación.
+      </p>
+    </div>
+
+    <h3 class="subtitulo">Seguridad en conexiones inalámbricas</h3>
+
+    <div class="bloque">
+      <p>
+        Android permite desactivar redes <strong>2G</strong>, ya que son más vulnerables a la interceptación
+        y a ataques de degradación de señal.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Además, rechaza automáticamente conexiones con <strong>cifrado nulo</strong>, garantizando que
+        la comunicación móvil esté protegida.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        También incrementa la seguridad en conexiones <strong>Bluetooth</strong> y <strong>NFC</strong>
+        para evitar transferencias no autorizadas de datos.
+      </p>
+    </div>
+
+    <h3 class="subtitulo">Mayor control de privacidad</h3>
+
+    <div class="bloque">
+      <p>
+        El usuario puede elegir a qué <strong>fotografías o videos</strong> puede acceder una aplicación,
+        evitando exponer toda la galería del dispositivo.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        Android 14 muestra <strong>advertencias sobre aplicaciones que comparten datos con terceros</strong>,
+        mejorando la transparencia sobre el uso de la información personal.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <p>
+        También incluye una <strong>API para detectar capturas de pantalla</strong>, lo que permite
+        monitorear posibles fugas visuales sin comprometer la privacidad del usuario.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="software-proteccion">
+  <div class="carac-wrapper">
+
+    <h2 class="section-title">4.9 Software dedicado a prevención de virus y hackers</h2>
+
+    <p class="section-text">
+      Además del propio sistema operativo, Android 14 trabaja junto con herramientas y mecanismos
+      de protección que ayudan a prevenir virus, detectar comportamientos sospechosos y reforzar
+      la seguridad general del dispositivo.
+    </p>
+
+    <h3 class="subtitulo">Herramientas y mecanismos de protección</h3>
+
+    <div class="bloque">
+      <h4>Google Play Protect</h4>
+      <p>
+        Google Play Protect analiza automáticamente las aplicaciones antes y después de su instalación,
+        con el objetivo de detectar comportamientos maliciosos, software sospechoso o virus.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Sandboxing de aplicaciones</h4>
+      <p>
+        Android utiliza un modelo de <strong>sandboxing</strong>, donde cada aplicación se ejecuta
+        en un entorno aislado. Esto impide que una app acceda sin permiso a los datos de otras aplicaciones.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Actualizaciones de seguridad automáticas</h4>
+      <p>
+        El sistema también recibe actualizaciones automáticas de seguridad, permitiendo que Android
+        y las aplicaciones obtengan correcciones recientes sin necesidad de intervención del usuario.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>SafetyNet / Play Integrity API</h4>
+      <p>
+        Android realiza verificaciones del sistema mediante <strong>SafetyNet</strong> o
+        <strong>Play Integrity API</strong>, las cuales permiten detectar si el dispositivo
+        ha sido manipulado, rooteado o se encuentra en un estado no confiable.
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Bloqueo de funciones inseguras</h4>
+      <p>
+        Cuando el sistema detecta condiciones de riesgo, puede restringir o bloquear
+        ciertas funciones para evitar que se comprometa la seguridad del dispositivo.
+      </p>
+    </div>
+
+  </div>
+  <div class="btn-container">
+        <a href="index.html" class="btn">Volver al inicio</a>
+      </div>
+</section>
+  
+
+</body>
+</html>

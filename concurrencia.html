@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multitarea: Control de concurrencia</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">ANDROID</div>
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="#concu">Concurrencia</a>
+        <a href="#procesos">Procesos en Andorid</a>
+        <a href="#ciclo">Ciclo de vida de procesos en Android</a>
+        <a href="#ciclo2">Ciclo de interfaz Activity</a>
+        <a href="#multi">Multitarea</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="tema-pagina">
+    <div class="tema-contenido">
+      <h1>2.- Multitarea: Control de concurrencia</h1>
+      <p>
+        En Android, la multitarea y el control de concurrencia son fundamentales para permitir
+        que varias aplicaciones y procesos funcionen de manera simultánea, manteniendo un buen
+        rendimiento y una experiencia fluida para el usuario.
+      </p>
+    </div>
+  </section>
+
+  <section id="concu">
+    <div class="carac-wrapper">
+      <h2 class="section-title">2.1 Concurrencia en android</h2>
+      <p class="section-text">
+        La concurrencia en Android es la capacidad que tiene el sistema operativo para ejecutar varias tareas de manera simultánea 
+        sin que la interfaz de usuario se bloquee. Cuando se inicia una aplicación, Android crea un hilo principal llamado UI Thread, 
+        encargado de manejar toda la lógica visual, la interacción con los botones, los textos y los eventos que el usuario realiza. 
+        Si este hilo se ocupa realizando tareas pesadas, como cálculos complejos o descargas, la aplicación puede dejar de responder,
+         mostrando el mensaje “La aplicación no responde” (ANR).
+      </p>
+    </div>
+  </section>
+
+<section id="procesos">
+    <div class="carac-wrapper">
+      <h2 class="section-title">2.2 Los procesos en Andorid</h2>
+      <p class="section-text">
+        Android gestiona los procesos mediante un sistema jerárquico de prioridades, en el cual cada proceso recibe un nivel de
+         importancia según su función y su relación con el usuario. Esto permite que el sistema optimice el uso de la memoria y
+          mantenga la experiencia del usuario fluida.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Proceso en primer plano</h3>
+          <p>
+            es el que el usuario está utilizando directamente, como la aplicación abierta en pantalla con la que interactúa. 
+            Tiene la máxima prioridad y solo se cerrará en situaciones extremas de falta de memoria.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Proceso visible</h3>
+          <p>
+            aunque no esté en primer plano, sigue siendo perceptible para el usuario, como cuando una app muestra un cuadro de 
+            diálogo sobre otra aplicación. Este tipo de proceso tiene prioridad alta porque la experiencia del usuario podría verse 
+            afectada si se cierra.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Procesos de servicio</h3>
+          <p>
+            realiza tareas en segundo plano que no requieren interacción directa, como reproducir música, 
+            sincronizar datos o descargar archivos. El sistema mantiene estos procesos activos mientras haya recursos disponibles y su tarea sea importante.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Procesos en segundo plano</h3>
+          <p>
+            contiene actividades pausadas o datos que el usuario podría volver a usar pronto. Su prioridad es menor, por lo que se 
+            puede cerrar para liberar memoria si es necesario, pero normalmente conserva información temporal para que la app se 
+            reanude rápidamente.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Procesos vacio</h3>
+          <p>
+            no tiene ninguna actividad activa y solo mantiene datos en memoria temporal. Es el primer tipo de proceso que Android puede eliminar cuando necesita liberar recursos. 
+​   Cuando el sistema detecta escasez de memoria, cierra primero los procesos de menor prioridad, preservando los que afectan directamente
+ la experiencia del usuario. Además, Android implementa mecanismos de concurrencia y multitarea, usando hilos, Handlers, Loopers y 
+ servicios, que permiten que cada proceso ejecute varias tareas simultáneamente sin bloquear la interfaz de usuario ni interferir con
+ otras aplicaciones. 
+          </p>
+        </div>
+        
+      </div>
+
+     <div>
+      <h2 class="section-title">Principales ventajas</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Experiencia fluida para el usuario</h3>
+          <p>
+            Gracias a que la interfaz de usuario se ejecuta en un hilo principal independiente de los procesos en segundo plano, 
+            las aplicaciones no se “congelan” al realizar tareas largas, como descargar archivos o cargar datos.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Ejecución simultánea de tareas</h3>
+          <p>
+            Android permite que varios procesos e hilos trabajen al mismo tiempo usando Handlers, Loopers, Services y Corrutinas,
+             lo que hace posible que la app realice varias operaciones sin afectar el rendimiento general.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Optimización de recursos</h3>
+          <p>
+            El sistema administra automáticamente los procesos según su prioridad, cerrando primero los de menor importancia
+             para liberar memoria sin perjudicar al usuario.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Capacidad de retomar procesos</h3>
+          <p>
+            Los procesos en segundo plano o en caché mantienen datos temporales, por lo que, al volver a abrir una app, 
+            esta puede reanudarse rápidamente desde donde se dejó.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Soporte para tareas de larga duración</h3>
+          <p>
+            Servicios en primer plano y frameworks como WorkManager permiten que las apps continúen ejecutando tareas importantes,
+             aunque el usuario no esté interactuando directamente con ellas.
+          </p>
+        </div>
+
+        
+      </div>
+
+<h2 class="section-title">Desventajas</h2>
+<div class="cards">
+<div class="card">
+          <h3>Complejidad para el desarrollador</h3>
+          <p>
+            Gestionar correctamente hilos, servicios y comunicación entre procesos puede ser complicado, especialmente para aplicaciones
+             grandes o con tareas concurrentes complejas.
+          </p>
+        </div>
+<div class="card">
+      <h3>Limitaciones de recursos</h3>
+          <p>
+            Aunque Android prioriza los procesos importantes, en dispositivos con poca memoria o procesadores más lentos, las tareas
+             en segundo plano pueden ser eliminadas antes de completarse.
+          </p>
+        </div>
+        <div class="card">
+      <h3>Sincronización y errores</h3>
+          <p>
+            La concurrencia mal gestionada puede causar condiciones de carrera, bloqueos o inconsistencias en los datos, 
+            lo que obliga al desarrollador a usar cuidadosamente Handlers, Runnable y otras herramientas.
+             
+          </p>
+        </div>
+        <div class="card">
+         <h3>Dependencia de APIs específicas</h3>
+          <p>
+            Algunas soluciones de multitarea, como AsyncTask (obsoleta en versiones recientes), tienen limitaciones y requieren que 
+            el desarrollador aprenda frameworks más avanzados como HaMeR, WorkManager o Corrutinas para un control completo.
+             
+          </p>
+        </div>
+        <div class="card">
+        <h3>Impacto en batería</h3>
+          <p>
+            Ejecutar múltiples procesos en segundo plano puede consumir más batería si no se optimiza adecuadamente, lo que puede
+             afectar la experiencia del usuario en dispositivos móviles.
+             
+          </p>
+        </div>
+     
+    </div>
+    </div>
+    </div>
+
+   
+  </section>
+
+<section id="ciclo">
+  <div class="carac-wrapper">
+    <h2 class="section-title">2.3 Ciclo de vida del proceso en Android</h2>
+    <p class="section-text">
+      El ciclo de vida de un proceso en Android no es lineal ni controlado directamente por el desarrollador, sino que es gestionado 
+      por el sistema operativo en función de la prioridad y el uso de recursos. Un proceso pasa por estados como creación, ejecución 
+      en primer plano, visible, servicio, segundo plano y en caché. Cuando el sistema necesita memoria, elimina automáticamente los
+       procesos de menor prioridad mediante el mecanismo conocido como Low Memory Killer, garantizando así el rendimiento y la
+        estabilidad del sistema.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Creación</h3>
+        <p>El proceso se crea cuando se abre una aplicación por primera vez, utilizando el mecanismo Zygote para optimizar el tiempo de carga.</p>
+      </div>
+
+      <div class="card">
+        <h3>Foreground (Activo)</h3>
+        <p>La aplicación está en uso directo por el usuario. Tiene la mayor prioridad y no se elimina fácilmente.</p>
+      </div>
+
+      <div class="card">
+        <h3>Visible</h3>
+        <p>La app no está en uso directo, pero sigue siendo visible en pantalla, como en multitarea.</p>
+      </div>
+
+      <div class="card">
+        <h3>Servicio</h3>
+        <p>El proceso ejecuta tareas en segundo plano sin interfaz, como reproducción de música o descargas.</p>
+      </div>
+
+      <div class="card">
+        <h3>Background</h3>
+        <p>La app ya no es visible, pero conserva datos o estado. Puede ser eliminada si el sistema necesita memoria.</p>
+      </div>
+
+      <div class="card">
+        <h3>Cached (Vacío)</h3>
+        <p>No realiza ninguna tarea, solo se mantiene en memoria para una apertura más rápida.</p>
+      </div>
+
+      <div class="card">
+        <h3>Terminación</h3>
+        <p>Android elimina procesos de baja prioridad mediante el Low Memory Killer cuando se requiere liberar recursos.</p>
+      </div>
+
+    </div>
+    <section class="prioridad-android">
+  <h2>Prioridad de procesos en Android</h2>
+
+  <div class="piramide">
+    <div class="nivel">Foreground</div>
+    <div class="nivel">Visible</div>
+    <div class="nivel">Service</div>
+    <div class="nivel">Background</div>
+    <div class="nivel eliminar">Cached (Empty)</div>
+  </div>
+
+  <p class="nota">👉 Se eliminan de abajo hacia arriba</p>
+
+  <!-- Ejemplo -->
+  <div class="ejemplo">
+    <h2>Ejemplo real</h2>
+
+    <div class="paso">📱 Abres Instagram → <span>Proceso creado</span></div>
+    <div class="paso">🟢 Lo usas → <span>Foreground</span></div>
+    <div class="paso">🔄 Cambias a otra app → <span>Background</span></div>
+    <div class="paso">📚 Abres muchas apps → <span>Cached</span></div>
+    <div class="paso eliminar">❌ Falta memoria → Android lo elimina</div>
+  </div>
+</section>
+  </div>
+  
+</section>
+
+
+  <section id="ciclo2">
+    <div class="carac-wrapper">
+      <h2 class="section-title">2.4 Ciclo de la interfaz Activity</h2>
+      <p class="section-text">El ciclo de vida de una Activity en Android está compuesto por una serie de métodos que controlan el
+         comportamiento de la interfaz de usuario. Estos métodos incluyen onCreate, onStart, onResume, onPause, onStop y onDestroy, y 
+         permiten gestionar los estados de la aplicación desde su creación hasta su finalización. Este ciclo no representa el proceso
+          completo de la aplicación, sino únicamente la interacción de la pantalla con el usuario.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>onCreate()</h3>
+          <p>
+           Se crea la Activity, se inicializan variables, lógica y se define la interfaz.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>onStart()</h3>
+          <p>
+            La Activity se vuelve visible, aunque aún no está lista para interacción.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>onResumen()</h3>
+          <p>
+            La Activity pasa a primer plano y el usuario puede interactuar con ella.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>onPause()</h3>
+          <p>
+            La Activity pierde el foco; puede seguir visible parcialmente.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>onStop()</h3>
+          <p>
+            La Activity deja de ser visible y libera recursos no esenciales.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>onRestart()</h3>
+          <p>
+            La Activity estaba detenida y se prepara para volver a primer plano.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>onDestroy()</h3>
+          <p>
+            La Activity se destruye definitivamente y se liberan todos los recursos.
+          </p>
+        </div>
+      </div>
+      <section class="flujo-app">
+  <h2>Flujo de ejecución de una App en Android</h2>
+
+  <div class="timeline">
+
+    <div class="evento">
+      <h3>📱 Abres una app</h3>
+      <p><span>onCreate</span> → <span>onStart</span> → <span>onResume</span></p>
+    </div>
+
+    <div class="evento">
+      <h3>🔄 Cambias a otra app</h3>
+      <p><span>onPause</span> → <span>onStop</span></p>
+    </div>
+
+    <div class="evento">
+      <h3>↩️ Regresas</h3>
+      <p><span>onRestart</span> → <span>onStart</span> → <span>onResume</span></p>
+    </div>
+
+    <div class="evento">
+      <h3>❌ Cierras completamente</h3>
+      <p><span>onDestroy</span></p>
+    </div>
+
+  </div>
+</section>
+
+    </div>
+  </section>
+
+  <section id="multi">
+    <div class="carac-wrapper">
+      <h2 class="section-title">2.5 Capacidad de multitare en Android</h2>
+      <p class="section-text">
+        Android está diseñado para ejecutar varias aplicaciones y procesos al mismo tiempo, lo que se conoce como multitarea. Esto es posible gracias a su arquitectura basada en el kernel de Linux, que permite crear y administrar múltiples procesos de manera independiente. 
+     Cada aplicación en Android se ejecuta en su propio proceso, con su máquina virtual (ART o Dalvik) y su propia memoria asignada. De esta forma, si una app falla, no afecta a las demás. El sistema se encarga de mantener activas las aplicaciones más recientes o las que están en uso, mientras que las que están en segundo plano pueden ser suspendidas o detenidas para liberar memoria si el dispositivo lo necesita. 
+  El sistema también emplea técnicas de concurrencia y multiprocesamiento, permitiendo que una app pueda ejecutar varias tareas 
+  a la vez dentro de su propio proceso (por ejemplo, escuchar música mientras se navega por internet). Esto se logra mediante hilos 
+  (threads) y servicios en segundo plano, los cuales permiten que diferentes acciones ocurran al mismo tiempo sin bloquear la interfaz
+   del usuario.
+      </p>
+
+    </div>
+  </section>
+
+  
+
+  <section id="importancia">
+    
+
+    <div class="btn-container">
+        <a href="index.html" class="btn">Volver al inicio</a>
+      </div>
+  </section>
+
+</body>
+</html>
