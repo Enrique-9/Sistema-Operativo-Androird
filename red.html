@@ -29,7 +29,7 @@
   <section class="tema-pagina">
     <div class="tema-contenido">
       <h1>4.- Redes y Seguridad: Sistemas distribuidos</h1>
-      <p>
+      <p >
         Android es el sistema operativo móvil más utilizado en el mundo, pero su popularidad
         también lo convierte en un objetivo frecuente de ataques. En esta página se presentan
         las principales amenazas, vulnerabilidades, riesgos en redes, métodos de protección
@@ -521,7 +521,7 @@
 
       <div class="card">
         <h3>Credential Manager</h3>
-        <p>
+        <p class="section-text">
           Es la API unificada de Android para almacenar y recuperar credenciales de usuario,
           llaves de acceso y mecanismos de acceso federado.
         </p>
@@ -543,7 +543,7 @@
 
       <div class="card">
         <h3>BiometricPrompt</h3>
-        <p>
+        <p class="section-text">
           Es la API recomendada para autenticación biométrica, como huella digital
           o reconocimiento facial.
         </p>
@@ -565,7 +565,7 @@
 
       <div class="card">
         <h3>Android Keystore</h3>
-        <p>
+        <p class="section-text">
           Es el almacén seguro de claves criptográficas del sistema.
         </p>
         <img src="IMG/criptografico.png" alt="">
@@ -586,7 +586,7 @@
 
       <div class="card">
         <h3>FIDO2 y WebAuthn</h3>
-        <p>
+        <p class="section-text">
           Permiten autenticación sin contraseña basada en criptografía de clave pública.
         </p>
         <img src="IMG/autenticacion(1).png" alt="">
@@ -607,7 +607,7 @@
 
       <div class="card">
         <h3>AccountManager y Smart Lock</h3>
-        <p>
+        <p class="section-text">
           Facilitan la administración de cuentas, tokens y credenciales guardadas.
         </p>
         <img src="IMG/seguridad.png" alt="">
@@ -628,7 +628,7 @@
 
       <div class="card">
         <h3>OAuth 2.0, OpenID Connect y MFA</h3>
-        <p>
+        <p class="section-text">
           Son estándares de autorización, identidad federada y autenticación multifactor.
         </p>
         <img src="IMG/autorizacion.png" alt="">
@@ -649,7 +649,7 @@
 
       <div class="card">
         <h3>Play Integrity y SafetyNet</h3>
-        <p>
+        <p class="section-text">
           Proveen señales sobre el estado del dispositivo y la integridad de la aplicación.
         </p>
         <img src="IMG/5g.png" alt="">
@@ -690,7 +690,7 @@
 
     <div class="bloque">
       <h4>HWASan</h4>
-      <p>
+      <p class="section-text">
         Android 14 utiliza <strong>HWASan (Hardware-Assisted AddressSanitizer)</strong> para detectar
         errores de memoria y evitar que los atacantes aprovechen esas fallas para ejecutar código malicioso.
       </p>
@@ -699,7 +699,7 @@
 
     <div class="bloque">
       <h4>Cifrado AES-HCTR2</h4>
-      <p>
+      <p class="section-text">
         También emplea un cifrado avanzado de archivos llamado <strong>AES-HCTR2</strong>, que protege
         tanto los nombres como los datos almacenados, fortaleciendo la confidencialidad de la información.
       </p>
@@ -708,7 +708,7 @@
 
     <div class="bloque">
       <h4>Soporte para múltiples IMEI</h4>
-      <p>
+      <p class="section-text">
         Android 14 incluye soporte para múltiples IMEI, lo que facilita el control y la trazabilidad
         de dispositivos en entornos corporativos y ayuda a reducir riesgos de manipulación o clonación.
       </p>
@@ -718,21 +718,21 @@
     <h3 class="subtitulo">Seguridad en conexiones inalámbricas</h3>
 
     <div class="bloque">
-      <p>
+      <p class="section-text">
         Android permite desactivar redes <strong>2G</strong>, ya que son más vulnerables a la interceptación
         y a ataques de degradación de señal.
       </p>
     </div>
 
     <div class="bloque">
-      <p>
+      <p class="section-text">
         Además, rechaza automáticamente conexiones con <strong>cifrado nulo</strong>, garantizando que
         la comunicación móvil esté protegida.
       </p>
     </div>
 
     <div class="bloque">
-      <p>
+      <p class="section-text">
         También incrementa la seguridad en conexiones <strong>Bluetooth</strong> y <strong>NFC</strong>
         para evitar transferencias no autorizadas de datos.
       </p>
@@ -741,21 +741,21 @@
     <h3 class="subtitulo">Mayor control de privacidad</h3>
 
     <div class="bloque">
-      <p>
+      <p class="section-text">
         El usuario puede elegir a qué <strong>fotografías o videos</strong> puede acceder una aplicación,
         evitando exponer toda la galería del dispositivo.
       </p>
     </div>
 
     <div class="bloque">
-      <p>
+      <p  class="section-text">
         Android 14 muestra <strong>advertencias sobre aplicaciones que comparten datos con terceros</strong>,
         mejorando la transparencia sobre el uso de la información personal.
       </p>
     </div>
 
     <div class="bloque">
-      <p>
+      <p class="section-text">
         También incluye una <strong>API para detectar capturas de pantalla</strong>, lo que permite
         monitorear posibles fugas visuales sin comprometer la privacidad del usuario.
       </p>
@@ -779,7 +779,7 @@
 
     <div class="bloque">
       <h4>Google Play Protect</h4>
-      <p>
+      <p class="section-text">
         Google Play Protect analiza automáticamente las aplicaciones antes y después de su instalación,
         con el objetivo de detectar comportamientos maliciosos, software sospechoso o virus.
       </p>
@@ -788,7 +788,7 @@
 
     <div class="bloque">
       <h4>Sandboxing de aplicaciones</h4>
-      <p>
+      <p class="section-text">
         Android utiliza un modelo de <strong>sandboxing</strong>, donde cada aplicación se ejecuta
         en un entorno aislado. Esto impide que una app acceda sin permiso a los datos de otras aplicaciones.
       </p>
@@ -797,7 +797,7 @@
 
     <div class="bloque">
       <h4>Actualizaciones de seguridad automáticas</h4>
-      <p>
+      <p class="section-text">
         El sistema también recibe actualizaciones automáticas de seguridad, permitiendo que Android
         y las aplicaciones obtengan correcciones recientes sin necesidad de intervención del usuario.
       </p>
@@ -806,7 +806,7 @@
 
     <div class="bloque">
       <h4>SafetyNet / Play Integrity API</h4>
-      <p>
+      <p class="section-text">
         Android realiza verificaciones del sistema mediante <strong>SafetyNet</strong> o
         <strong>Play Integrity API</strong>, las cuales permiten detectar si el dispositivo
         ha sido manipulado, rooteado o se encuentra en un estado no confiable.
@@ -816,7 +816,7 @@
 
     <div class="bloque">
       <h4>Bloqueo de funciones inseguras</h4>
-      <p>
+      <p class="section-text">
         Cuando el sistema detecta condiciones de riesgo, puede restringir o bloquear
         ciertas funciones para evitar que se comprometa la seguridad del dispositivo.
       </p>

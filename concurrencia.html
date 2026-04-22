@@ -59,7 +59,7 @@
       <div class="cards">
         <div class="card">
           <h3>Proceso en primer plano</h3>
-          <p>
+          <p class="section-text">
             Es el que el usuario está utilizando directamente, como la aplicación abierta en pantalla con la que interactúa. 
             Tiene la máxima prioridad y solo se cerrará en situaciones extremas de falta de memoria.
           </p>
@@ -68,7 +68,7 @@
 
         <div class="card">
           <h3>Proceso visible</h3>
-          <p>
+          <p class="section-text">
             Aunque no esté en primer plano, sigue siendo perceptible para el usuario, como cuando una app muestra un cuadro de 
             diálogo sobre otra aplicación. Este tipo de proceso tiene prioridad alta porque la experiencia del usuario podría verse 
             afectada si se cierra.
@@ -78,7 +78,7 @@
 
         <div class="card">
           <h3>Procesos de servicio</h3>
-          <p>
+          <p class="section-text">
             Realiza tareas en segundo plano que no requieren interacción directa, como reproducir música, 
             sincronizar datos o descargar archivos. El sistema mantiene estos procesos activos mientras haya recursos disponibles y su tarea sea importante.
           </p>
@@ -87,7 +87,7 @@
 
         <div class="card">
           <h3>Procesos en segundo plano</h3>
-          <p>
+          <p class="section-text">
             Contiene actividades pausadas o datos que el usuario podría volver a usar pronto. Su prioridad es menor, por lo que se 
             puede cerrar para liberar memoria si es necesario, pero normalmente conserva información temporal para que la app se 
             reanude rápidamente.
@@ -97,7 +97,7 @@
 
         <div class="card">
           <h3>Procesos vacio</h3>
-          <p>
+          <p class="section-text">
             No tiene ninguna actividad activa y solo mantiene datos en memoria temporal. Es el primer tipo de proceso que Android puede eliminar cuando necesita liberar recursos. 
 ​   Cuando el sistema detecta escasez de memoria, cierra primero los procesos de menor prioridad, preservando los que afectan directamente
  la experiencia del usuario. Además, Android implementa mecanismos de concurrencia y multitarea, usando hilos, Handlers, Loopers y 
@@ -115,7 +115,7 @@
       <div class="cards">
         <div class="card">
           <h3>Experiencia fluida para el usuario</h3>
-          <p>
+          <p class="section-text">
             Gracias a que la interfaz de usuario se ejecuta en un hilo principal independiente de los procesos en segundo plano, 
             las aplicaciones no se “congelan” al realizar tareas largas, como descargar archivos o cargar datos.
           </p>
@@ -123,7 +123,7 @@
 
         <div class="card">
           <h3>Ejecución simultánea de tareas</h3>
-          <p>
+          <p class="section-text">
             Android permite que varios procesos e hilos trabajen al mismo tiempo usando Handlers, Loopers, Services y Corrutinas,
              lo que hace posible que la app realice varias operaciones sin afectar el rendimiento general.
           </p>
@@ -131,7 +131,7 @@
 
         <div class="card">
           <h3>Optimización de recursos</h3>
-          <p>
+          <p class="section-text">
             El sistema administra automáticamente los procesos según su prioridad, cerrando primero los de menor importancia
              para liberar memoria sin perjudicar al usuario.
           </p>
@@ -139,7 +139,7 @@
 
         <div class="card">
           <h3>Capacidad de retomar procesos</h3>
-          <p>
+          <p class="section-text">
             Los procesos en segundo plano o en caché mantienen datos temporales, por lo que, al volver a abrir una app, 
             esta puede reanudarse rápidamente desde donde se dejó.
           </p>
@@ -147,7 +147,7 @@
 
         <div class="card">
           <h3>Soporte para tareas de larga duración</h3>
-          <p>
+          <p class="section-text">
             Servicios en primer plano y frameworks como WorkManager permiten que las apps continúen ejecutando tareas importantes,
              aunque el usuario no esté interactuando directamente con ellas.
           </p>
@@ -160,21 +160,21 @@
 <div class="cards">
 <div class="card">
           <h3>Complejidad para el desarrollador</h3>
-          <p>
+          <p class="section-text">
             Gestionar correctamente hilos, servicios y comunicación entre procesos puede ser complicado, especialmente para aplicaciones
              grandes o con tareas concurrentes complejas.
           </p>
         </div>
 <div class="card">
       <h3>Limitaciones de recursos</h3>
-          <p>
+          <p class="section-text">
             Aunque Android prioriza los procesos importantes, en dispositivos con poca memoria o procesadores más lentos, las tareas
              en segundo plano pueden ser eliminadas antes de completarse.
           </p>
         </div>
         <div class="card">
       <h3>Sincronización y errores</h3>
-          <p>
+          <p class="section-text"> 
             La concurrencia mal gestionada puede causar condiciones de carrera, bloqueos o inconsistencias en los datos, 
             lo que obliga al desarrollador a usar cuidadosamente Handlers, Runnable y otras herramientas.
              
@@ -182,7 +182,7 @@
         </div>
         <div class="card">
          <h3>Dependencia de APIs específicas</h3>
-          <p>
+          <p class="section-text">
             Algunas soluciones de multitarea, como AsyncTask (obsoleta en versiones recientes), tienen limitaciones y requieren que 
             el desarrollador aprenda frameworks más avanzados como HaMeR, WorkManager o Corrutinas para un control completo.
              
@@ -190,7 +190,7 @@
         </div>
         <div class="card">
         <h3>Impacto en batería</h3>
-          <p>
+          <p class="section-text">
             Ejecutar múltiples procesos en segundo plano puede consumir más batería si no se optimiza adecuadamente, lo que puede
              afectar la experiencia del usuario en dispositivos móviles.
              
@@ -219,37 +219,37 @@
 
       <div class="card">
         <h3>1.- Creación</h3>
-        <p>El proceso se crea cuando se abre una aplicación por primera vez, utilizando el mecanismo Zygote para optimizar el tiempo de carga.</p>
+        <p class="section-text">El proceso se crea cuando se abre una aplicación por primera vez, utilizando el mecanismo Zygote para optimizar el tiempo de carga.</p>
       </div>
 
       <div class="card">
         <h3>2.- Foreground (Activo)</h3>
-        <p>La aplicación está en uso directo por el usuario. Tiene la mayor prioridad y no se elimina fácilmente.</p>
+        <p class="section-text">La aplicación está en uso directo por el usuario. Tiene la mayor prioridad y no se elimina fácilmente.</p>
       </div>
 
       <div class="card">
         <h3>3.- Visible</h3>
-        <p>La app no está en uso directo, pero sigue siendo visible en pantalla, como en multitarea.</p>
+        <p class="section-text">La app no está en uso directo, pero sigue siendo visible en pantalla, como en multitarea.</p>
       </div>
 
       <div class="card">
         <h3>4.- Servicio</h3>
-        <p>El proceso ejecuta tareas en segundo plano sin interfaz, como reproducción de música o descargas.</p>
+        <p class="section-text">El proceso ejecuta tareas en segundo plano sin interfaz, como reproducción de música o descargas.</p>
       </div>
 
       <div class="card">
         <h3>5.- Background</h3>
-        <p>La app ya no es visible, pero conserva datos o estado. Puede ser eliminada si el sistema necesita memoria.</p>
+        <p class="section-text">La app ya no es visible, pero conserva datos o estado. Puede ser eliminada si el sistema necesita memoria.</p>
       </div>
 
       <div class="card">
         <h3>6.- Cached (Vacío)</h3>
-        <p>No realiza ninguna tarea, solo se mantiene en memoria para una apertura más rápida.</p>
+        <p class="section-text">No realiza ninguna tarea, solo se mantiene en memoria para una apertura más rápida.</p>
       </div>
 
       <div class="card">
         <h3>7.- Terminación</h3>
-        <p>Android elimina procesos de baja prioridad mediante el Low Memory Killer cuando se requiere liberar recursos.</p>
+        <p class="section-text">Android elimina procesos de baja prioridad mediante el Low Memory Killer cuando se requiere liberar recursos.</p>
       </div>
 
     </div>
@@ -293,7 +293,7 @@
       <div class="cards">
         <div class="card">
           <h3>onCreate()</h3>
-          <p>
+          <p class="section-text">
            Se crea la Activity, se inicializan variables, lógica y se define la interfaz.
           </p>
           <img src="IMG/generar.png" alt="">
@@ -301,7 +301,7 @@
 
         <div class="card">
           <h3>onStart()</h3>
-          <p>
+          <p class="section-text">
             La Activity se vuelve visible, aunque aún no está lista para interacción.
           </p>
           <img src="IMG/start-up.png" alt="">
@@ -309,7 +309,7 @@
 
         <div class="card">
           <h3>onResumen()</h3>
-          <p>
+          <p class="section-text">
             La Activity pasa a primer plano y el usuario puede interactuar con ella.
           </p>
           <img src="IMG/resumen.png" alt="">
@@ -317,7 +317,7 @@
 
         <div class="card">
           <h3>onPause()</h3>
-          <p>
+          <p class="section-text">
             La Activity pierde el foco; puede seguir visible parcialmente.
           </p>
           <img src="IMG/boton-de-pausa.png" alt="">
@@ -325,7 +325,7 @@
 
         <div class="card">
           <h3>onStop()</h3>
-          <p>
+          <p class="section-text">
             La Activity deja de ser visible y libera recursos no esenciales.
           </p>
           <img src="IMG/senal-de-stop.png" alt="">
@@ -333,7 +333,7 @@
 
         <div class="card">
           <h3>onRestart()</h3>
-          <p>
+          <p class="section-text">
             La Activity estaba detenida y se prepara para volver a primer plano.
           </p>
           <img src="IMG/reanudar.png" alt="">
@@ -341,7 +341,7 @@
 
         <div class="card">
           <h3>onDestroy()</h3>
-          <p>
+          <p class="section-text">
             La Activity se destruye definitivamente y se liberan todos los recursos.
           </p>
           <img src="IMG/planeta-destruido.png" alt="">

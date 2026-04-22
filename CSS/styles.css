@@ -1405,3 +1405,10 @@ img {
     gap: 10px;
   }
 }
+
+p {
+    
+    text-indent: 40px;
+    line-height: 1.6;
+}
+
